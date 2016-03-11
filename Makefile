@@ -1,3 +1,8 @@
+
+ASM = jogo_da_forca_vMARS.asm
+SIM = Mars.jar
+OTHERS = Makefile README.md jogo_forca_vSPIM.asm
+
 all: run
 
 code:
@@ -9,9 +14,9 @@ clean:
 	@rm -rf *.log
 
 zip: clean
-	@rm -f Trabalho_2.zip
-	@zip -r Trabalho_2.zip jogo_da_forca_vMARS.asm jogo_forca_vSPIM.asm Makefile README.txt Mars.jar
+	@rm -f JogoDaForca.zip
+	@zip -r JogoDaForca.zip $(ASM) $(SIM) $(OTHERS)
 
 run:
 	clear
-	java -jar Mars.jar jogo_da_forca_vMARS.asm
+	java -jar $(SIM) $(ASM)
